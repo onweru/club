@@ -1,0 +1,18 @@
+- name: Connect With Culture
+  image: img1.jpg
+  link: pt1.html
+- name: Entertainment
+  image: img2.jpg
+  link: pt2.html
+- name: Married Life
+  image: img5.jpg
+  link: pt3.html
+- name: Memorable Occasions
+  image: img4.jpg
+  link: pt4.html
+- name: Say I Do
+  image: img3.jpg
+  link: pt5.html
+- name: Spa Day
+  image: img6.jpg
+  link: pt6.html

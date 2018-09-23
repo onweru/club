@@ -1,0 +1,18 @@
+- name: Specialized Events
+  image: co1.jpg 
+  link: ct1.html
+- name: C Class Trips
+  image: co2.jpg 
+  link: ct2.html
+- name: Team Retreats
+  image: co3.jpg 
+  link: ct3.html
+- name: Public Relations
+  image: co4.jpg 
+  link: ct4.html
+- name: Branding
+  image: co5.jpg 
+  link: ct5.html
+- name: Social Media
+  image: co6.jpg 
+  link: ct6.html
