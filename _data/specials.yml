@@ -1,0 +1,6 @@
+- name: Deals For Las Vegas
+  image: lv1.jpg	
+  link: os1.html
+- name: Deals For Thailand
+  image: tl1.jpg 
+  link: os2.html

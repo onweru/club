@@ -16,7 +16,7 @@ body{
   margin:auto;
   background:$light;
   font-family: $font-primary;
-  color: $pale;
+  color: $dark;
   font-weight:400;
   font-size: 16px;
   line-height: 1.5;
@@ -26,6 +26,7 @@ body{
 }
 p {
   padding: 15px 0;
+  color: $pale;
 }
 input[type="button"],input[type="submit"]{
   transition:0.5s all;
@@ -34,7 +35,7 @@ h1,h2,h3,h4,h5,h6{
   margin:0;	
   padding:0;
   font-family: $font-secondary;
-  // color: $dark;
+  color: inherit;
   text-align: left;
   padding: 15px 0;
 }	
@@ -471,25 +472,50 @@ ul.nav.navbar-nav li {
   padding-bottom:40px;
   font-family: 'Cinzel', serif;
 }
-.demo { 	
+.card { 	
   max-width:100%;
   text-align:center;
+  &_item {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    &::after{
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      background: rgba(0,0,0, 0.5);
+      z-index: 6;
+      transition: all 0.3s;
+    }
+  }
   h4{
     text-align: center;
     font-size: 1.25rem;
     text-transform: uppercase;
     margin: 10px 0;
   }
+  &_image{
+    width: 100%;
+    transition: all 0.3s;
+    margin: 0;
+  }
+  &:hover {
+    a{
+      box-shadow: 0 0 90px rgba(0, 0, 0, 0.3);
+    }
+    &a::after{
+      background: rgba(0,0,0,0.2);
+    }
+    img{
+      transform: scale(1.1);
+    }
+  }
 }
-.demo > li {
-  width:auto;
-  display:inline-block;
-}
-.demo img { 
-  width: 100%; 
-  margin:15px 0; 
-  cursor:pointer;
-} 
+
 // /*-- /gallery --*/
 // /*-- team --*/
 .team-w3 {
@@ -613,6 +639,9 @@ input#name,input#email2,input#phone {
   border-color:$dark;
   padding: 0 10px;
   background:rgba(167, 129, 116, 0.31);
+}
+.divider-wthree {
+  color: $light;
 }
 textarea.form-control {
   height: auto;

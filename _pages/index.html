@@ -13,13 +13,10 @@ permalink: /
 	<div class = 'container'>
 		<div class = 'col-lg-6 col-md-6 col-sm-12' data-aos = 'flip-right'>
 			<h3>Our Services</h3>
-			<h4 class = 'bright'>DISCOVER - </h4>
-			<p>We develop and create the most luxurious cultural experiences for you.  Our luxury travel concierge can create itineraries which deliver only the best in comfort, ease and luxury.  Our top selections of expeditions, reveal the most exciting, luxurious and remote places to view and explore.  From weddings, and honeymoons, to corporate retreats, we will work with you every single time.</p>
-			
-			<h4 class = 'bright'>PROFESIONAL TRAVEL - </h4>
-			<p>Whether you're hosting clients, arranging retreat trips, or navigating social media content trips, our travel specialist can design a trip that will make the impossible, very, very much possible.  Our commitment to your travel experience is both of is in a class all to itself.  We know the importance of being flexible, we give our full attention to our corporate clients, so they can do the same.</p>
-			<h4 class = 'bright'>EXCLUSIVE PERSONAL CULTURE - </h4>
-			<p>Our clients know that we offer more than just luxury travel, instead we offer dream vacations and assist our clients on designing their personal journey.  Our clients are comfortable and secure with knowing that we are available to them 24 hours a day, 7 days a week, period.  With our options, come from getting to know our clients, and we understand and meet their expectations.  Our expertise in travel concierge services are second to none.</p>
+			{%- for service in site.data.services -%}
+			<h4 class = 'bright'>{{ service.name }}</h4>
+			{{ service.description | markdownify }}
+			{%- endfor -%}
 		</div>
 		<div class = 'col-lg-6 col-md-6 col-sm-12' data-aos = 'flip-left'>
 			<ul class = 'grid cs-style-1'>
@@ -41,16 +38,16 @@ permalink: /
 </section>
 <section class = 'service-agileinfo'>
 	<div class = 'container'>		
-		<ul class = 'grid-2 demo'>
-			<li>
-				<h4>Deals For Las Vegas</h4>
-				<img src = '/assets/images/lv1.jpg' alt = ''	onclick = 'location.href="os1.html"'/>
-			</li>			
-			<li>
-				<h4>Deals For Thailand</h4>
-				<img src = '/assets/images/tl1.jpg' alt = '' onclick = 'location.href= "os2.html"'/>
-			</li>			
-		</ul>
+		<ul class = 'grid-2'>
+		{% for item in site.data.specials %}
+			<li class = 'card'>
+				<h4>{{ item.name }}</h4>
+				<a href = '/{{ item.link }}' title = '{{ item.name }}' class = 'card_item' >
+					<img src = '/assets/images/{{ item.image }}' alt = '{{ item.name }}' class = 'card_image'/>
+				</a>
+			</li>
+		{% endfor %}
+		</ul>	
 	</div>
 </section>
 <section class = 'divider-wthree'  id = 'service'>
@@ -60,13 +57,14 @@ permalink: /
 	</div>
 </section>
 <section>
-	<ul class = 'wrap demo pt-4 pb-4 grid-3'>
+	<ul class = 'wrap pt-2 pb-4 grid-3'>
 		{% for item in site.data.corporate-travels %}
-		<li>
+		<li class = 'card'>
 			<h4>{{ item.name }}</h4>
 			<a href = '/{{ item.link }}' title = '{{ item.name }}' >
-			<img src = '/assets/images/{{ item.image }}' alt = '{{ item.name }}' class = 'img-responsive'/>
+			<img src = '/assets/images/{{ item.image }}' alt = '{{ item.name }}' class = 'card_image'/>
 			</a>
+		</li>
 		{% endfor %}
 	</ul>
 </section>
@@ -77,13 +75,14 @@ permalink: /
 	</div>
 </section>
 <section>
-	<ul class = ' wrap demo pt-4 pb-4 grid-3'>
+	<ul class = ' wrap pt-2 pb-4 grid-3'>
 	 {% for item in site.data.corporate-travels %}
-	 <li>
+	 <li class = 'card'>
 		 <h4>{{ item.name }}</h4>
-		 <a href = '/{{ item.link }}' title = '{{ item.name }}' >
-			<img src = '/assets/images/{{ item.image }}' alt = '{{ item.name }}' class = 'img-responsive'/>
+		 <a href = '/{{ item.link }}' title = '{{ item.name }}' class = 'card_item' >
+			<img src = '/assets/images/{{ item.image }}' alt = '{{ item.name }}' class = 'card_image'/>
 		 </a>
+		</li>
 	 {% endfor %}
 	</ul>	
 </section>
