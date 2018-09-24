@@ -74,9 +74,6 @@ a.logo h1 {
   text-transform:uppercase;
   font-family: 'Cinzel', serif;
 }
-.fa-hand-pointer-o:before {
-  content: "\f25a";
-}
 a.logo h1 i.fa {
   font-size: 25px;
   color: $light;
@@ -699,7 +696,7 @@ textarea::-ms-input-placeholder {
 .footer {
   padding:50px 0;
   background-color:$dark;
-  .container{
+  .wrap{
     position: relative;
   }
 }

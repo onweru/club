@@ -3,41 +3,32 @@ layout: default
 permalink: /
 ---
 <section class = 'banner-w3ls'>
-	<div id = 'block' data-vide-bg = '/assets/video/cruise' data-vide-options = 'position: 0% 50%'>
+	<!-- <div id = 'block' data-vide-bg = '/assets/video/cruise' data-vide-options = 'position: 0% 50%'> -->
 		<div class = 'overlay'>
 			<h2>THE ULTIMATE ITINERARY SERVICE</h2>				
 		</div>
 	</div>	
 </section>
-<section class = 'about-wthree' id = 'about'>
-	<div class = 'container'>
-		<div class = 'col-lg-6 col-md-6 col-sm-12' data-aos = 'flip-right'>
-			<h3>Our Services</h3>
-			{%- for service in site.data.services -%}
-			<h4 class = 'bright'>{{ service.name }}</h4>
-			{{ service.description | markdownify }}
-			{%- endfor -%}
-		</div>
-		<div class = 'col-lg-6 col-md-6 col-sm-12' data-aos = 'flip-left'>
-			<ul class = 'grid cs-style-1'>
-				<li>
-					<figure>
-						<img src = '/assets/images/about-img2.jpg' alt = 'img01' class = 'img-responsive'>						
-					</figure>
-				</li>
-			</ul>
-		</div>
-		<div class = 'clearfix'></div>
+<section class = ' wrap grid-2 pt-4 pb-4' id = 'about'>
+	<div>
+		<h3>Our Services</h3>
+		{%- for service in site.data.services -%}
+		<h4 class = 'bright'>{{ service.name }}</h4>
+		{{ service.description | markdownify }}
+		{%- endfor -%}
+	</div>
+	<div class = 'pt-2'>
+		<img src = '/assets/images/about-img2.jpg' alt = 'img01'/>						
 	</div>
 </section>
-<section class = 'divider-wthree'  id = 'service'>
-	<div class = 'container'>
+<section class = 'divider-wthree'  id = 'services'>
+	<div class = 'wrap'>
 		<h2 class = 'text-center' data-aos = 'zoom-in'>Our Specials</h2>
 		<p class = 'text-center' data-aos = 'zoom-in'>Our specialists provide outstanding service for our clients, with the highest standards of service, a highly flexible approach, and attention to detail.</p>
 	</div>
 </section>
-<section class = 'service-agileinfo'>
-	<div class = 'container'>		
+<section class = 'service-agileinfo' id = 'specials'>
+	<div class = 'wrap pb-4'>		
 		<ul class = 'grid-2'>
 		{% for item in site.data.specials %}
 			<li class = 'card'>
@@ -50,13 +41,13 @@ permalink: /
 		</ul>	
 	</div>
 </section>
-<section class = 'divider-wthree'  id = 'service'>
-	<div class = 'container'>
+<section class = 'divider-wthree'  id = 'personal'>
+	<div class = 'wrap'>
 		<h3 class = 'text-center' data-aos = 'zoom-in'>Personal Travel</h3>
 		<p class = 'text-center' data-aos = 'zoom-in'>Intimate adventures, designed with passion</p>
 	</div>
 </section>
-<section>
+<section id = 'corporate'>
 	<ul class = 'wrap pt-2 pb-4 grid-3'>
 		{% for item in site.data.corporate-travels %}
 		<li class = 'card'>
@@ -69,7 +60,7 @@ permalink: /
 	</ul>
 </section>
 <section class = 'divider-wthree'  id = 'service'>
-	<div class = 'container pt-4 pb-4'>
+	<div class = 'wrap pt-4 pb-4'>
 		<h3 class = 'text-center'>Corporate Travel</h3>
 		<p class = 'text-center' data-aos = 'zoom-in'>Our specialists provide outstanding service for our clients, with the highest standards of service, a highly flexible approach, and attention to detail.</p>
 	</div>
