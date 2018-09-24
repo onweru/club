@@ -1,12 +1,25 @@
-<h4>Subscribe to our newsletter</h4>
-<div class="subscribe">
-  <form action="#" method="post">
-    <div class="form-group1">
-      <input class="form-control" id="email1" name="email1" placeholder="Enter Your Email Address" type="email" required>
+<div class = 'mail_container'>
+    <div class = 'mail_inner container'>
+      <div class = 'mail_close mail_retard'>close</div>
+      <div class = 'mail_preview mail_grow'>
+        <span>Sign Up for our Newsletter</span>
+        <span>{%- include up-arrow.svg -%}</span>
+      </div>
+      <div class = 'mail_body mail_retard'>
+        <h2>Itinerary Club Newsletter</h2>
+        <p>Get notified about our deals</p>
+        <div id='mc_embed_signup'>
+          <form action='{{ site.mailchimp.url }}'  method="post" id='mc-embedded-subscribe-form' name='mc-embedded-subscribe-form' class='validate chimp' target='_blank' novalidate>
+            <div id='mc_embed_signup_scroll'>
+              <div style='position: absolute; left: -5000px;' aria-hidden='true'><input type='text' name='{{ site.mailchimp.hidden }}' tabindex='-1' value=''></div>
+              <label for='mce-EMAIL'></label>
+              <input type='email' value='' name='EMAIL' class='form_input form_input-shadow' id='mce-EMAIL' placeholder='you@awesome.com' required>
+              <input type='submit' value='Subscribe' name='subscribe' id='mc-embedded-subscribe' class='btn'>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
-    <div class="form-group2">
-      <button class="btn btn-outline btn-lg" type="submit">Subscribe</button>
-    </div>
-    <div class="clearfix"></div>
-  </form>
-</div>
+    <a class = 'cd-top' href = '/#home'>{%- include up-arrow.svg -%}</a>
+  </div>
+  

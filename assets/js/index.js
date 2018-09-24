@@ -1,6 +1,56 @@
 // AOS.init({
 //   duration: 1200
 // });
+(function autoResizeTextField() {
+  let textarea = document.querySelector('textarea');
+  textarea ? autosize(textarea) : false;
+})();
+
+// select a single element
+function elem(selector) {
+  let elem = document.querySelector(selector);
+  return elem != false ? elem : false;
+}
+
+// select multiple elements
+function elems(selector) {
+  let elems = document.querySelectorAll(selector);
+  return elems != false ? elems : false;
+}
+
+function modifyClass(el, targetClass) {
+  // equivalent to toggleClass
+  if (el && typeof el == 'object' && targetClass) {
+    let elClass = el.classList;
+    elClass.contains(targetClass) ? elClass.remove(targetClass) : elClass.add(targetClass);
+  }
+}
+
+(function toggleSubscribeWidget() {
+  let mailPreview = elem('.mail_preview');
+  let mailClose = elem('.mail_close');
+  if (mailPreview) {
+    let grow = 'mail_grow';
+    let retard = 'mail_retard';
+    function growOrRetard(targets) {
+      targets.forEach((target) => {
+        modifyClass(target, grow);
+        modifyClass(target, retard);
+      });
+    }
+    mailPreview.addEventListener('click', function(event) {
+      let preview = this;
+      let mailBody = this.nextElementSibling;
+      growOrRetard([mailBody, preview, mailClose]);
+    });
+    mailClose.addEventListener('click', function() {
+      let preview = this.nextElementSibling;
+      let mailBody = mailPreview.nextElementSibling;
+      growOrRetard([mailBody, preview, mailClose]);
+    });
+  }
+})();
+
 // Grayscale jQuery to collapse the navbar on scroll
 $(window).scroll(function() {
   if ($(".navbar").offset().top > 50) {

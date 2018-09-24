@@ -135,7 +135,7 @@ a.logo h1 i.fa {
 // /*-- navigation --*/
 .navbar-wrapper {
   position: absolute;
-  top: 0;
+  top: 110px;
   right: 0;
   left: 0;
   z-index:inherit;
@@ -160,9 +160,6 @@ ul.nav.navbar-nav li {
   display:inline-block;
 }
 @media (min-width: 1200px) {
-  .navbar-wrapper {
-    margin-top: 125px;
-  }
   .navbar-wrapper .container {
     padding-right: 15px;
     padding-left: 15px;
@@ -601,17 +598,6 @@ ul.nav.navbar-nav li {
   line-height:35px;
   font-family: 'Cinzel', serif;	
 }
-input#email1 {
-  width: 100%;
-  height: 45px;
-  line-height: 45px;
-  color: $light;
-  border-color:$dark;
-  padding: 0 20px;
-  text-align:center;
-  margin-bottom: 20px;
-  background:rgba(167, 129, 116, 0.31);
-}
 button.btn.btn-outline.btn-lg {
   width: 100%;
   height: 45px;
@@ -625,17 +611,6 @@ button.btn.btn-outline.btn-lg {
 button.btn.btn-outline.btn-lg:hover {
   background-color:#c0392b;
   color:$light;
-}
-input#name,input#email2,input#phone {
-  width: 100%;
-  height: 45px;
-  line-height: 45px;
-  font-size: 15px;
-  font-weight: normal;
-  color: $light;
-  border-color:$dark;
-  padding: 0 10px;
-  background:rgba(167, 129, 116, 0.31);
 }
 .divider-wthree {
   color: $light;
@@ -662,34 +637,7 @@ button.btn-outline2:hover {
   background-color:#c0392b;
 }
 input::-webkit-input-placeholder {
-  color: $light !important;
-}
-
-input:-moz-placeholder { /* Firefox 18- */
-  color: $light !important;  
-}
-
-input::-moz-placeholder {  /* Firefox 19+ */
-  color: $light !important;  
-}
-
-input:-ms-input-placeholder {  
-  color: $light !important;  
-}
-textarea::-webkit-input-placeholder {
-  color: $light !important;
-}
-
-textarea::-moz-placeholder { /* Firefox 18- */
-  color: $light !important;  
-}
-
-textarea::-moz-placeholder {  ///* Firefox 19+ */
-  color: $light !important;  
-}
-
-textarea::-ms-input-placeholder {  
-  color: $light !important;  
+  color: lighten($pale, 15%) !important;
 }
 // /*-- /contact us --*/
 // /*-- footer --*/
@@ -730,8 +678,6 @@ ul.social-icons2 {
   text-align: center;
   background-color: transparent;
   transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  -ms-transition: all 0.5s ease-in-out;
 }
 .footer ul.social-icons2 li a i.fa:hover {
   background-color:#e74c3c;
@@ -758,12 +704,13 @@ ul.social-icons2 {
   position: absolute;
   width: 48px;
   height: 48px;
-  line-height: 48px;
-  bottom: 20px;
-  right: 0;
+  bottom: 10px;
+  right: 25px;
   background: $bright;
   color: #fff;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
   font-size: 22px;
   opacity: 0.9;
@@ -1277,9 +1224,6 @@ ul.social-icons2 {
   .contact-w3-agileits {
     text-align:center;
   }
-  input#name, input#email2, input#phone {
-    text-align:center;
-  }
   textarea.form-control {
     text-align:center;
   }
@@ -1654,5 +1598,176 @@ ul.social-icons2 {
 .overlay {
   &_dark{
     background: $dark;
+  }
+}
+textarea {
+  -webkit-appearance: none;
+  resize: none;
+}
+form {
+  max-width: 540px;
+  margin: 0 auto 50px;
+}
+label{
+  opacity: 0;
+  visibility: hidden;
+}
+
+.form{
+  &_action{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba($dark, 0.1);
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  &_control {
+    box-shadow: 0 0 130px rgba(0,0,0,0.17);
+    border-radius: 10px;
+    width: 100%;
+    padding: 15px;
+    transition: all 0.3s ease-out;
+    &:focus{
+      box-shadow: 0 0 90px rgba(0,0,0,0.17);
+    }
+  }
+  &_input {
+    background: $light;
+    color: $dark;
+    margin-bottom: 15px !important;
+    line-height: 1.6;
+    padding: 15px 30px;
+    border-radius: 30px;
+    border: 1px solid transparent;
+    text-align: left;
+    font-size: 16px;
+    width: 100%;
+    outline: none;
+    -webkit-appearance: none;
+    opacity: 0.9;
+    transition: all 0.3s;
+    &-shadow {
+      border: 1px solid #f0f0f0;
+      margin: 15px auto 25px !important;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      &:focus{
+        box-shadow: 0 0 40px rgba(0,0,0,0.17);
+      }
+    }
+    &:hover{
+      opacity: 1;
+    }
+  }
+  &_submit {
+    background: $bright;
+    color: $light;
+    text-transform: uppercase;
+    text-align: center;
+  }
+}
+
+// subscribe widget;
+.mail{
+  h2,h3{
+    padding-top: 15px;
+  }
+  &_container {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+  }
+  &_grow {
+    animation: grow 1s forwards;
+    padding: 10px 20px;
+  }
+  &_retard {
+    height: 0;
+    opacity: 0;
+    padding: 0;
+  }
+  &_inner{
+    position: relative;
+  }
+  &_preview,&_body{
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+    overflow: hidden;
+    transform-origin: 100% 50%;
+    width: 100%;
+    max-width: 450px;
+  }
+  &_preview {
+    font-family:  $font-secondary;
+    font-weight: 500;
+    cursor: pointer;
+    background: $bright;
+    display: flex;
+    justify-content: space-between;
+    color: $light;
+    border-radius: 10px 10px 0 0;
+  }
+  &_body{
+    background: $light;
+    box-shadow: 0 0 60px rgba(0,0,0,0.3);
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+  }
+  &_close{
+    overflow: hidden;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 90px;
+    color: $pale;
+    font-size: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.17);
+    z-index: 15;
+    transition: all 0.3s;
+    &:hover{
+      box-shadow: 0 0 30px rgba(0,0,0,0.17);
+    }
+  }
+}
+@keyframes grow {
+  0%{
+    height: 0;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    height: initial;
+    opacity: 1;
+  }
+}
+
+@keyframes retard {
+  0%{
+    height: initial;
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100%{
+    height: 0;
+    opacity: 0;
   }
 }
