@@ -469,6 +469,7 @@ ul.nav.navbar-nav li {
 .card { 	
   max-width:100%;
   text-align:center;
+  list-style-type: none;
   &_item {
     position: relative;
     display: block;
