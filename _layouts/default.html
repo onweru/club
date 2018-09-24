@@ -7,9 +7,13 @@
 	<body>
 		{%- include nav.html -%}
 		{{ content }}
-		{%- include form.html -%}
+		{%- unless page.slim -%}
+			{%- include form.html -%}
+		{%- endunless-%}
 		{%- include footer.html -%}
-		{%- include mail.html -%}
-		{%- include scripts.html -%}
+		{%- unless page.slim -%}
+			{%- include mail.html -%}
+			{%- include scripts.html -%}
+		{%- endunless-%}
 	</body>
 </html>

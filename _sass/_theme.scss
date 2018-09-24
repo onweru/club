@@ -1771,3 +1771,44 @@ label{
     opacity: 0;
   }
 }
+$emojis: (
+  wave: "\1F44B",
+  warn: "\26A0",
+  gear: "\2699",  
+  star : "\2b50",
+  mail: "\1F4E7",
+  money: "\1F480",
+  write: "\270D",
+  clap: "\1F447",
+  smile: "\1F642",
+  sad: "\1F61E"
+);
+
+@each $emoji, $code in $emojis {
+  .em_#{$emoji}:after {
+    content: $code;
+  }
+}
+
+[class^=em_] {
+  display: inline-grid;
+  justify-self: center;
+  background: transparent;
+  font-size: 1.25rem;
+}
+.em-2{
+  font-size: 4rem;
+}
+
+[class^=em_]:after {
+  padding-left: 2.5px;
+  padding-right: 2.5px;
+}
+
+.notfound {
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
